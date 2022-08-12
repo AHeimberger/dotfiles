@@ -1,0 +1,86 @@
+[user]
+	name = aheimberger
+	email = AndreasHeimberger@gmx.at
+
+[includeIf "gitdir:/home/aheimberger/Workspace/projects/bbv/"]
+	path = /home/aheimberger/Workspace/projects/bbv/_gitconfig
+[includeIf "gitdir:/home/aheimberger/Workspace/projects/siemens/"]
+	path = /home/aheimberger/Workspace/projects/siemens/_gitconfig
+
+[credential]
+	helper = cache
+
+[push]
+	default = simple
+
+[status]
+	relativePaths = false
+
+[pager]
+	diff =
+
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+
+[color "status"]
+	added = green
+	changed = red
+	untracked = yellow
+
+[alias]
+	aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias.// -e s/\\ /\\ $(printf \"\\043\")--\\>\\ / | column -t -s $(printf \"\\043\") | sort -k 1
+	d = diff
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+	lgm = log --decorate --stat --graph --pretty=format:'%C(yellow)%h%Creset (%ar - %Cred%an%Creset), %s%n'
+	ca = commit -a
+	s = status -sb
+	co = checkout
+	cob = checkout -b
+	ec = config --global -e
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	undo = reset --soft HEAD~1
+	amend = commit -a --amend
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	ignored = status --ignored
+	pt = !git tag -l | xargs git tag -d && git fetch -t
+
+[core]
+	attributesfile = ~/.gitattributes
+
+[diff]
+	tool = meld
+[diff "image"]
+	command = %%FILE_GITSCRIPTS%%/image_diff.sh
+[diff "excel"]
+	command = %%FILE_GITSCRIPTS%%/excel_compare/bin/excel_cmp
+
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+
+[merge]
+  tool = code
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+# [merge]
+# 	tool = meld
+# [mergetool]
+# 	keepBackup = false
+# [mergetool "meld"]
+# 	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
