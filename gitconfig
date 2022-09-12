@@ -51,6 +51,7 @@
 	co = checkout
 	cob = checkout -b
 	ec = config --global -e
+	url = config --get remote.origin.url
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset --soft HEAD~1
 	amend = commit -a --amend
