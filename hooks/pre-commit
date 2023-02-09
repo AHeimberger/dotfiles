@@ -1,0 +1,8 @@
+# Do not commit to main
+head_branch="$(git remote show origin | grep "HEAD branch" | cut -d ' ' -f5)"
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "${current_branch}" = "${head_branch}" ]; then
+  echo "-> You can not directly commit to branch: \033[01;33m${head_branch}\033[00m"
+  exit 1
+fi
