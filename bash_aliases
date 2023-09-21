@@ -4,6 +4,10 @@
 # --------------------------------------------------------------------------------
 eval "$(starship init bash)"
 
+# parse_git_branch() {
+#  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# }
+# export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\e[91m\]\$(parse_git_branch)\[\e[00m\]\$ "
 
 # --------------------------------------------------------------------------------
 # Background color for ssh connections
@@ -11,6 +15,8 @@ eval "$(starship init bash)"
 echo -e "\033]11;#202020\a"
 ssh_alias()
 {
+    # ps -t #{pane_tty}
+    # echo -ne "\\ePtmux;\\e\\033]11;#061b4a\\007\\e\\\\"
     echo -e "\033]11;#061b4a\a"
     ssh $@
     echo -e "\033]11;#202020\a"
@@ -108,6 +114,13 @@ alias tl='tmux list-sessions'                                                   
 alias tk='tmux kill-session -t'                                                                             # kill specific session
 alias tlayout='tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2'      # get layout of active window
 
+# git open modified files in code
+alias gom='git diff --name-only | xargs code'
+
+# alias to open putty
+alias putty='env GDK_BACKEND=x11 putty'
+
+
 # --------------------------------------------------------------------------------
 # Make man pages more readable
 # --------------------------------------------------------------------------------
@@ -118,3 +131,9 @@ export LESS_TERMCAP_se=$'\E[0m'            # end standout-mode
 export LESS_TERMCAP_so=$'\E[01;44;33m'     # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'            # end underline
 export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
+
+
+# --------------------------------------------------------------------------------
+# Add cargo to bash
+# --------------------------------------------------------------------------------
+source "$HOME/.cargo/env"

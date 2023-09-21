@@ -15,6 +15,7 @@ set tabstop=4
 set softtabstop=3
 set shiftwidth=4
 set noexpandtab
+set textwidth=80
 " set colorcolumn=110
 set autoread
 
@@ -52,6 +53,12 @@ filetype indent on
 " --------------------------------------------------------------------------
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+
+" --------------------------------------------------------------------------
+" autoformat
+" --------------------------------------------------------------------------
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 
 " --------------------------------------------------------------------------

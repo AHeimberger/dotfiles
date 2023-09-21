@@ -52,6 +52,7 @@
 	cob = checkout -b
 	ec = config --global -e
 	url = config --get remote.origin.url
+	email = config --get user.email
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset --soft HEAD~1
 	amend = commit -a --amend
@@ -61,6 +62,7 @@
 
 [core]
 	attributesfile = ~/.gitattributes
+#	editor = code --wait
 
 [diff]
 	tool = meld
