@@ -32,7 +32,7 @@ alias myWorkspace="cd ${DIR_WORKSPACE}"
 for DIR in ${DIR_WORKSPACE}/*; do
     BASHRC="${DIR}/_bashrc"
     if [[ -f "${BASHRC}" ]]; then
-        # echo "-> ${BASHRC}"
+        echo "→ init: ${BASHRC}"
         source "${BASHRC}"
     fi;
 done;
