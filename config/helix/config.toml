@@ -1,1 +1,38 @@
 theme = "ayu_dark"
+
+[editor]
+mouse = true
+color-modes = true
+true-color = true
+cursorline = true
+bufferline = "multiple"
+lsp.display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["file-encoding", "file-line-ending", "file-type"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+0 = "goto_line_start"
+[keys.normal."´"]
+o = ":config-open"
+r = ":config-reload"
+[keys.normal."backspace"]
+r = ":sh cargo run"
+b = ":sh cargo build"
