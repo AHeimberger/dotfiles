@@ -5,11 +5,11 @@
         "editor.formatOnType": true
     },
     "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "'DroidSansMono Nerd Font Mono'",
+    "editor.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
     "editor.fontSize": 14,
     "terminal.integrated.allowMnemonics": false,
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "'DroidSansMono Nerd Font Mono'",
+    "terminal.integrated.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
     "terminal.integrated.gpuAcceleration": "canvas",
     "workbench.colorCustomizations": {
         "terminal.background": "#202020FF",
