@@ -132,4 +132,6 @@ export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
 # --------------------------------------------------------------------------------
 # Add cargo to bash
 # --------------------------------------------------------------------------------
-source "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
