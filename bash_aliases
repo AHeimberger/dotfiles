@@ -16,8 +16,6 @@ fi
 echo -e "\033]11;#202020\a"
 ssh_alias()
 {
-    # ps -t #{pane_tty}
-    # echo -ne "\\ePtmux;\\e\\033]11;#061b4a\\007\\e\\\\"
     echo -e "\033]11;#061b4a\a"
     ssh $@
     echo -e "\033]11;#202020\a"
