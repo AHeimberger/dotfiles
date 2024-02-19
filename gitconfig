@@ -6,6 +6,8 @@
 	path = /home/aheimberger/Workspace/projects/bbv/_gitconfig
 [includeIf "gitdir:/home/aheimberger/Workspace/projects/siemens/"]
 	path = /home/aheimberger/Workspace/projects/siemens/_gitconfig
+[includeIf "gitdir:/home/aheimberger/Workspace/projects/komax/"]
+	path = /home/aheimberger/Workspace/projects/komax/_gitconfig
 
 [credential]
 	helper = cache
