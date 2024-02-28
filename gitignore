@@ -1,1 +1,4 @@
 .gitconfigset
+.DS_Store
+.vscode
+.obsidian/workspace.json
