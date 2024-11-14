@@ -1,22 +1,40 @@
 {
-    "explorer.confirmDelete": false,
-    "window.zoomLevel": -1,
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
-    "editor.fontSize": 14,
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
-    "editor.wrappingIndent":"indent",
-    "terminal.integrated.allowMnemonics": false,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
-    "terminal.integrated.gpuAcceleration": "canvas",
-    "workbench.colorCustomizations": {
-        "terminal.background": "#202020FF",
-        "terminal.foreground": "#dddad6e7"
-    },
-    "workbench.colorTheme": "One Dark Pro Flat",
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": -1,
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.enablePreview": false,
+  "search.showLineNumbers": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
+  "editor.fontSize": 14,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.wrappingIndent": "indent",
+  "editor.renderWhitespace": "all",
+  "terminal.integrated.allowMnemonics": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "'MesloLGMDZ Nerd Font Mono'",
+  "terminal.integrated.gpuAcceleration": "canvas",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#202020FF",
+    "terminal.foreground": "#dddad6e7",
+    "tab.activeBackground": "#07664a",
+    "tab.activeForeground": "#7adabd",
+    "tab.selectedBackground": "#000000ff"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "search.exclude": {
+    "**/.git": true,
+    "**/build": true
+  },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "hediet.vscode-drawio.resizeImages": null,
+  "cmake.showOptionsMovedNotification": false,
+  "cmake.configureOnOpen": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ]
 }
