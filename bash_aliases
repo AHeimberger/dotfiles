@@ -133,6 +133,29 @@ export LESS_TERMCAP_us=$'\E[00;32m'        # begin underline
 
 
 # --------------------------------------------------------------------------------
+# copy/paste in terminal
+# https://stackoverflow.com/questions/5130968/how-can-i-copy-the-output-of-a-command-directly-into-my-clipboard
+# --------------------------------------------------------------------------------
+# if grep -q -i microsoft /proc/version; then
+#   # on WSL: version contains the string "microsoft"
+#   alias copy="clip.exe"
+#   alias paste="powershell.exe Get-Clipboard"
+# elif grep -q -i cygwin $(uname -a); then
+#   # on CYGWIN: uname contains the string "cygwin"
+#   alias copy="/dev/clipboard"
+#   alias paste="cat /dev/clipboard"
+# elif [[ ! -r /proc/version ]]; then
+#   # on MAC: version is not readable at all
+#   alias copy="pbcopy"
+#   alias paste="pbpaste"
+# else
+#   # on "normal" linux
+#   alias copy="xclip -sel clip"
+#   alias paste="xclip -sel clip -o"
+# fi
+
+
+# --------------------------------------------------------------------------------
 # Add cargo to bash
 # --------------------------------------------------------------------------------
 if [ -f "$HOME/.cargo/env" ]; then
